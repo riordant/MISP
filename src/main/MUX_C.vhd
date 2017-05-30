@@ -1,0 +1,14 @@
+ENTITY MUX_C IS
+	PORT (
+		in0 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		in1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		sel : IN STD_LOGIC;
+		out0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+END MUX_C;
+ARCHITECTURE Behavioral OF MUX_C IS
+BEGIN
+	out0 <= in0 WHEN sel = '0' ELSE
+	        in1 WHEN sel = '1' ELSE
+	        "UUUUUUUU" AFTER 5ns;
+END Behavioral;

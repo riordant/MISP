@@ -1,0 +1,11 @@
+ENTITY zeroFill IS
+	PORT (
+		in0 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+		out0 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	);
+END zeroFill;
+ARCHITECTURE Behavioral OF zeroFill IS
+BEGIN
+	out0(15 DOWNTO 3) <= "0000000000000";
+	out0(2 DOWNTO 0) <= in0;
+END Behavioral;
